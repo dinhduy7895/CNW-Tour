@@ -1,6 +1,7 @@
 <?php
 
-include('../../connect/connect.php');
+include('../connect/connect.php');
+
 
 if (isset($_POST['create'])) {
     $username = $_POST['username'];

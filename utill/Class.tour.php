@@ -53,8 +53,9 @@ Class Tour {
             $stmt = $this->db->prepare("SELECT * from price where tourId=:id");
             $stmt->bindparam(":id", $this->id);
             $stmt->execute();
-            $this->price = $stmt->fetchAll(PDO::FETCH_CLASS);
-            return $this->price;
+            $prices = $stmt->fetchAll(PDO::FETCH_CLASS);
+            foreach ($prices as $price)
+            return $price;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -80,6 +81,18 @@ Class Tour {
             $stmt->execute();
             $tour = $stmt->fetch(PDO::FETCH_ASSOC);
             return $tour;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+     public function findByDay($day) {
+        try {
+            $conn = $GLOBALS['conn'];
+            $stmt = $conn->prepare("SELECT * from tour where dayTour=:id");
+            $stmt->bindparam(":id", $day);
+            $stmt->execute();
+            $tours = $stmt->fetchAll(PDO::FETCH_CLASS);
+            return $tours;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

@@ -1,7 +1,8 @@
 <?php
-
-include('../connect/connect.php');
 session_start();
+include 'connect/connect.php';
+
+
 if (isset($_POST['submit'])) {
 
     $username = $_POST['username'];

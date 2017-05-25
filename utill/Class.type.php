@@ -45,7 +45,8 @@ Class Type {
             $stmt = $conn->prepare("SELECT * from type where id=:id");
             $stmt->bindparam(":id", $typeId);
             $stmt->execute();
-            $type = $stmt->fetch(PDO::FETCH_ASSOC);
+            $types = $stmt->fetchAll(PDO::FETCH_CLASS);
+            foreach($types as $type)
             return $type;
         } catch (PDOException $e) {
             echo $e->getMessage();

@@ -1,5 +1,5 @@
 <?php
-include('../../connect/connect.php');
+include('../connect/connect.php');
 
 if (isset($_GET['search'])) {
     $id = $_GET['id'];
@@ -9,7 +9,7 @@ if (isset($_GET['search'])) {
     $sql = 'Select * from address where  name LIKE "%' . $name . '%"   and id LIKE "%' . $id . '%"';
 } else
     $sql = 'Select * from address ';
-$stmt = $conn->prepare($sql);
+$adrress_stmt = $conn->prepare($sql);
 
-$stmt->execute();
+$adrress_stmt->execute();
 ?>

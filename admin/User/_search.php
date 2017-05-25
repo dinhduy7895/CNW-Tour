@@ -1,4 +1,6 @@
 <?php
+include('../connect/connect.php');
+
 if (isset($_GET['search'])) {
     $id = $_GET['id'];
     $username = $_GET['username'];

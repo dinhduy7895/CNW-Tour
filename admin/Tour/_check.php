@@ -1,6 +1,6 @@
 <?php
+include '../connect/connect.php';
 
-include("../../connect/connect.php");
 include '../../util/Image.php';
 if (isset($_POST['create'])) {
     //Create record for Tour table

@@ -1,7 +1,6 @@
 <?php
 require_once '../layout/header.php';
 require_once '../layout/left.php';
-include('../../connect/connect.php');
 require_once './_search.php';
 ?>
 <div class="content-wrapper">

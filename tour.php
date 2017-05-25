@@ -1,27 +1,25 @@
 <?php
-// session_name('s');
-// session_set_cookie_params(0, '/');
 include('./connect/connect.php');
 session_start();
+include './utill/Class.tour.php';
+include './utill/Class.address.php';
+include './utill/Class.type.php';
+include './utill/Image.php';
 include 'inc/header.php';
 
-$_SESSION['login'] = "";
+
 $title = "_title";
 ?>
 <?php
 if (isset($_POST['submit'])) {
-    $uname = $_POST['Name'];
-    $umail = $_POST['Name'];
-    $upass = $_POST['pass'];
-    $upass = md5($upass);
-
-    if ($user->login($uname, $umail, $upass)) {
-        $_SESSION['login'] = true;
-
-        if ($uname == 'admin') {
-            $user->redirect('../admin/news.php');
-        } else
-            $user->redirect('_url.php');
+    $number = $_POST['number'];
+    $idUser = $_SESSION['idUser'];
+    $idTour = $_GET['tourId'];
+    $require = $_POST['requirement'];
+    
+    if ($user->tour($idUser, $idTour, $number,$require)) {
+      
+            $user->redirect('success.php');
     }
     else {
         $error = "Wrong Details !fa";
@@ -33,29 +31,44 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-8 news-highlight">
+                <?php
+                if (isset($_GET['tourId'])) {
+                    $id = $_GET['tourId'];
+                } else {
+                    
+                }
+                $tour = Tour::find($id);
+                $tour = new Tour($tour);
+                $url = "tour.php?tourId=" . $tour->id;
+                $img = Image::getImage($tour->image);
+                ?>
                 <div class="row center">
                     <div class="new-single col-lg-12">
                         <div class="new-single-image">
                             <a href="#">
-                                <img src="http://pipsum.com/1200x400.jpg"   class="image-responsive" alt="">
+                                <img src="<?php echo $img; ?>" class="image-responsive" alt="">
                             </a>
                         </div>
                         <div class="new-single-header">
-                            <div class="new-single-header-category">
-                                <span><a href="#">News in Day</a></span>
-                            </div>
+
                             <h2 class="main-title">
-                                <a href="#" class="">_title</a>
+                                <a href="<?php echo $url; ?>" class=""><?php echo $tour->name; ?></a>
                             </h2>
                             <div class="time-new-single">
-                                <span>Published at _date <br></span>
-                                <span>Upload by _user </span>
+                                <span class="price">FROM: <span><?php echo $tour->price->f1t2 . "$  "; ?></span> </span><br>  
+                                <i class="fa fa-clock-o"></i> <a href="news-page.php?dayTour=?<?php echo $tour->dayTour; ?>"><?php echo $tour->dayTour; ?> Days</a> &nbsp;&nbsp;
+                                <i class="fa fa-map-marker"></i>
+                                <?php
+                                $addressList = $tour->getAddress();
+                                foreach ($addressList as $address) {
+                                    ?>
+                                    <a href="news-page.php?addressId=<?php echo $address->id ?>"><?php echo $address->name . ", " ?></a>
+                                <?php } ?>
+
+
                             </div>
                             <div class="new-single-content">
-
-                                <div class="context">
-                                    _content
-                                </div> 	
+                                <?php echo $tour->info; ?>
                             </div>
                         </div>
                         <div class="new-single-price">
@@ -63,7 +76,7 @@ if (isset($_POST['submit'])) {
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>2 peoples</th>
+                                        <th>1-2 peoples</th>
                                         <th>3-5 Peoples</th>
                                         <th>Over 5 Peoples</th>
                                     </tr>
@@ -71,17 +84,25 @@ if (isset($_POST['submit'])) {
                                 <tbody>
                                     <tr>
                                         <th>Price</th>
-                                        <td>3 </td>
-                                        <td> 4</td>
-                                        <td>5 </td>
+                                        <td><?php echo $tour->price->f1t2; ?> </td>
+                                        <td><?php echo $tour->price->f3t5 ;?></td>
+                                        <td><?php echo $tour->price->over5 ;?></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="new-single-register">
+                            
+                            <?php 
+                                echo $error;
+                                if(!isset($_SESSION['user_session'])){
+                                    echo"vui long Dang nhap de thuc hien Dang Ky";
+                                }
+                                else{
+                            ?>
                             <form name="register" method="POST" enctype="multipart/form-data">
                                 <div class="form-group field-user-username required">
-                                    <label class="control-label">Hello Dinh Duy</label>
+                                    <label class="control-label">Hello <?php echo $_SESSION['user_session']; ?></label>
                                 </div>
                                 <div class="form-group field-user-username required">
                                     <label class="control-label">You want to choice this tour, right?</label>
@@ -94,7 +115,11 @@ if (isset($_POST['submit'])) {
                                     <label class="control-label">Do you have ant additional requirement?</label>
                                     <textarea class="form-control" name="requirement"  ></textarea>
                                 </div>
-
+                                 <div class="form-group field-user-username required">
+                                     <input type="submit"  style="padding: 0;" class="btn form-control" name="submit" maxlength="255" value="Send" required="required" >
+                                </div>
+                            </form>
+                                <?php } ?>
                         </div>
                     </div>
                 </div>

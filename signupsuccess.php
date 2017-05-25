@@ -1,7 +1,7 @@
 
 <?php
 $title = "success";
-include('header.php');
+include('./inc/header.php');
 ?>
     <div class="success center">
         <div class="success-header">
@@ -12,4 +12,4 @@ include('header.php');
     
     
 
-<?php include('footer.php');?>
+<?php include('./inc/footer.php');?>

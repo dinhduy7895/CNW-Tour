@@ -45,7 +45,10 @@ Class Address {
             $stmt = $conn->prepare("SELECT * from address where id=:id");
             $stmt->bindparam(":id", $addressId);
             $stmt->execute();
-            $address = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $addresses = $stmt->fetchAll(PDO::FETCH_CLASS);
+            foreach($addresses as $address)
+           
             return $address;
         } catch (PDOException $e) {
             echo $e->getMessage();

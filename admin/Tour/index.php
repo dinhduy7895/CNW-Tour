@@ -49,7 +49,7 @@ require_once './_search.php';
                                 <td> <input type='text' name='info'></td>
                                 <td><button type="submit" name="search"> Search</button></td>
                             </tr>
-                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <?php while ($row = $adrress_stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['name']; ?></td>

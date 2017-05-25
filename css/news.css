@@ -96,7 +96,7 @@
 	color: #888888;
 }
 .new-single-header .time-new-single{
-	font-size: 12px;
+	font-size: 19px;
 }
 .new-single-header h2{
 	    color: #313131;
@@ -117,7 +117,10 @@
     font-style: italic;
 }
 .time-new-single span{
-	color: #888;
+	    color: #ab4545;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 3em;
 }
 .new-single-header:after{
 	content: "";

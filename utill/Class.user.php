@@ -8,7 +8,32 @@ class USER
     {
         $this->db = $DB_con;
     }
-    
+    public function tour($idUser, $idTour, $number,$require)
+    {
+        
+        try
+        {
+            $create_at = new DateTime();
+            $create_at = $create_at->format('Y-m-d H:i:s');
+            $stmt = $this->db->prepare("INSERT INTO DangKy (khachHang_id, tour_id, numOfPeople,	create_at,requirement)
+            VALUES(:khachHang_id, :tour_id, :numOfPeople,:create_at,:requirement)");
+            
+            $stmt->bindparam(":khachHang_id", $idUser);
+            $stmt->bindparam(":tour_id", $idTour);
+            $stmt->bindparam(":numOfPeople", $number);
+            $stmt->bindparam(":create_at", $create_at);
+            $stmt->bindparam(":requirement", $require);
+
+            
+            $stmt->execute();
+            
+            return $stmt;
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+    }
     public function register($fname,$lname,$name,$email,$pass,$phone,$year)
     {
         if ($name == 'admin') {

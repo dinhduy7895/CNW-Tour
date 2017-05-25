@@ -13,7 +13,7 @@
             else {
                 $addressId=[];
             }
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            while ($row = $adrress_stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>
             <option value="<?php echo $row['id']; ?>" <?php echo (in_array($row['id'], $addressId)?"selected":""); ?>><?php echo $row['name']; ?></option>
             <?php } ?>
