@@ -17,36 +17,36 @@ include './inc/header.php';
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active single-slider">
-                <img src="http://pipsum.com/1200x400.jpg" alt="Chania" class=" img-responsive img-100">
+                <img src="./uploads/biker.jpg" alt="Chania" class=" img-responsive img-100" style="width: 100%;height: 600px;">
                 <div class="carousel-caption">
-                    <h3>RETAIN</h3>
+                    <h3>BIKER</h3>
                     <div class="banner-content">
-                        <p>Our single-minded focus<br> is our students</p>
-                        <p>Enrolling the best<br>and brightest</p>
+                        <p>Enjoy the tour with BIKER<br> is the best thing</p>
+                        <p>Make it become the best<br>and brightest of your tour</p>
                     </div>
-                    <h3><a class="read" href="tour.php?type=1">READ MORE</a></h3>
+                    <h3><a class="read" href="news-page.php?typeId=5">READ MORE</a></h3>
                 </div>
             </div>
             <div class="item single-slider">
-                <img src="http://pipsum.com/1200x400.jpg" alt="Chania" class=" img-responsive img-100">
+                <img src="./uploads/moto.jpg" alt="Chania" class=" img-responsive img-100" style="width: 100%;height: 600px;">
                 <div class="carousel-caption">
-                    <h3>RETAIN</h3>
+                    <h3>MOTO</h3>
                     <div class="banner-content">
-                        <p>Our single-minded focus<br> is our students</p>
-                        <p>Enrolling the best<br>and brightest</p>
+                         <p>Enjoy the tour with MOTO<br> is the best thing</p>
+                        <p>Make it become the best<br>and brightest of your tour</p>
                     </div>
-                    <h3><a class="read" href="tour.php?type=2">READ MORE</a></h3>
+                    <h3><a class="read" href="news-page.php?typeId=6">READ MORE</a></h3>
                 </div>
             </div>
             <div class="item single-slider">
-                <img src="http://pipsum.com/1200x400.jpg" alt="Chania" class=" img-responsive img-100">
+                <img src="./uploads/hiking.jpg" alt="Chania" class=" img-responsive img-100" style="width: 100%;height: 600px;">
                 <div class="carousel-caption">
-                    <h3>RETAIN</h3>
+                    <h3>HIKING</h3>
                     <div class="banner-content">
-                        <p>Our single-minded focus<br> is our students</p>
-                        <p>Enrolling the best<br>and brightest</p>
+                         <p>Enjoy the tour with HIKING<br> is the best thing</p>
+                        <p>Make it become the best<br>and brightest of your tour</p>
                     </div>
-                    <h3><a class="read" href="tour.php?type=3">READ MORE</a></h3>
+                    <h3><a class="read" href="news-page.php?typeId=8">READ MORE</a></h3>
                 </div>
             </div>
         </div>

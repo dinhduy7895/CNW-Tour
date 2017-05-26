@@ -6,15 +6,15 @@
                 <h2>Contact</h2>
                 <div class="content">
                     <ul class="menu">
-                        <li class="first leaf"><a href="http://www.dut.udn.vn/">DAI HOC BACH KHOA DA NANG</a>
+                        <li class="first leaf"><a href="http://www.dut.udn.vn/">DAI HOC BACH KHOA - DAI HOC DA NANG</a>
                         </li>
                         <li class="leaf"><a href="http://www.dut.udn.vn/index.php?option=com_content&view=article&id=978:khoa-cong-ngh-thong-tin&catid=30:thong-tin">KHOA CONG NGHE THONG TIN</a>
                         </li>
-                        <li class="leaf"><a href="#"><Pre>   Tel: (84-511) 3736 949</Pre></a>
+                        <li class="leaf"><a href="#"><Pre>Tel: (84-511) 3736 949</Pre></a>
                         </li>
-                        <li class="leaf"><a href="#"><Pre>   Fax: (84-511) 3842 771</Pre>   </a>
+                        <li class="leaf"><a href="#"><Pre>Fax: (84-511) 3842 771</Pre>   </a>
                         </li>
-                        <li class="last leaf"><a href="#"><Pre>   Email: cntt@dut.udn.vn</Pre></a>
+                        <li class="last leaf"><a href="#"><Pre>Email: cntt@dut.udn.vn</Pre></a>
                         </li>
                     </ul>
                 </div>       
@@ -23,13 +23,13 @@
                 <h2>Information</h2>
                 <div class="content">
                     <ul class="menu">
-                        <li class="first leaf"><a href="#">Website Tuyen Sinh Du Hoc</a>
+                        <li class="first leaf"><a href="#">Website Tour</a>
                         </li>
-                        <li class="leaf"><a href="#"><Pre>  Made by: Nam Than Team </Pre> </a>
+                        <li class="leaf"><a href="#"><Pre>Made by: Duy Tinh Team </Pre> </a>
                         </li>
-                        <li class="leaf"><a href="#"><Pre>   Tel: (84-511) 3789 946</Pre></a>
+                        <li class="leaf"><a href="#"><Pre>Tel: (84-511) 3789 946</Pre></a>
                         </li>
-                        <li class="last leaf"><a href="#"><Pre>Email: namthanteam@gmail.com</Pre></a>
+                        <li class="last leaf"><a href="#"><Pre>Email: duytinhteam@gmail.com</Pre></a>
                         
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
         <div class="footertext ">
             <div class="region region-footer-text container">
                 <div class="content-copy">
-                    <p>Copyright 2016 | Thuc Tap Cong Nhan</p>
+                    <p>Copyright 2017 | Cong Nghe Web</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <?php
-include '../connect/connect.php';
+//include '../connect/connect.php';
 include './_search.php';
 include '../layout/header.php';
 include '../layout/left.php';
@@ -37,7 +37,6 @@ include '../layout/left.php';
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Days</th>
-                                <th>Info</th>
                                 <th>Action</th>
                             </tr>
 
@@ -48,7 +47,6 @@ include '../layout/left.php';
                                 <td> <input type='text' name='id'></td>
                                 <td> <input type='text' name='name'></td>
                                 <td> <input type='text' name='day'></td>
-                                <td> <input type='text' name='info'></td>
                                 <td><button type="submit" name="search"> Search</button></td>
                             </tr>
                             <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>

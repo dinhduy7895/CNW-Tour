@@ -7,7 +7,7 @@ require_once '../layout/left.php';
     <section class="content">
         <div class="pull-left">
             <div class="title" >
-                <h1>ADDRESS MANAGER</h1>
+                <h1>TYPE MANAGER</h1>
             </div>
         </div>
         <div class="create" >

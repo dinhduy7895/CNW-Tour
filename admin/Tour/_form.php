@@ -28,8 +28,8 @@ include '../../utill/Image.php';
     </div>
     <div class="form-group field-user-username required">
         <label class="control-label" for="user-password">Info</label>
-        <input type="text" id="user-password" class="form-control" name="info" maxlength="255" required="required" value='<?php echo isset($row) ? $row['info'] : ''; ?>'>
-
+        <textarea  id="user-password" class="form-control" name="info" maxlength="255" required="required" value='<?php echo isset($row) ? $row['info'] : ''; ?>'>
+        </textarea>
         <div class="help-block"></div>
     </div>
     <div class="s form-group">

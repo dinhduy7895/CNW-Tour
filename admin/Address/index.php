@@ -20,7 +20,7 @@ require_once './_search.php';
             unset($_SESSION['mess']);
         } ?>
         <div class="create">
-            <a class="btn btn-success" href="create.php">Create User</a>
+            <a class="btn btn-success" href="create.php">Create Address</a>
         </div>
         <div class="box">
             <div class="box-header">
