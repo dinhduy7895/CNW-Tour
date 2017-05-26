@@ -1,7 +1,8 @@
 <?php
+session_start();
 
 include '../connect/connect.php';
-define('root', dirname(__FILE____));
+define('root', "http://localhost/CNW/Tour");
 
 class Image {
 
@@ -15,7 +16,7 @@ class Image {
                 $_SESSION['mess'] = "Sorry, there was an error uploading your file.";
                 header("location: index.php");
             }
-            return;
+            return false;
         }
 
         function getImage($image) {

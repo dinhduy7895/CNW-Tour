@@ -38,18 +38,6 @@ require_once '../layout/left.php';
                     <td><?php echo $row['name']; ?></td>
                 </tr>
                 <tr>
-                    <td>Days</td>
-                    <td><?php echo $row['dayTour']; ?></td>
-                </tr>
-                <tr>
-                    <td>Information</td>
-                    <td><?php echo $row['info']; ?></td>
-                </tr>
-
-                <?php include './viewTourAdress.php'; ?>
-                <?php include './viewTourType.php'; ?>
-
-                <tr>
                     <td>Created At</td>
                     <td><?php echo $row['created_at']; ?></td>
                 </tr>

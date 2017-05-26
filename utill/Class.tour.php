@@ -79,7 +79,8 @@ Class Tour {
             $stmt = $conn->prepare("SELECT * from tour where id=:id");
             $stmt->bindparam(":id", $tourId);
             $stmt->execute();
-            $tour = $stmt->fetch(PDO::FETCH_ASSOC);
+            $tours = $stmt->fetchAll(PDO::FETCH_CLASS);
+            foreach($tours as $tour)
             return $tour;
         } catch (PDOException $e) {
             echo $e->getMessage();

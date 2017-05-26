@@ -51,6 +51,15 @@
         });
     });
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#select1').multiselect({
+            enableFiltering: true,
+            includeSelectAllOption: true,
+            selectAllJustVisible: false
+        });
+    });
+</script>
   <script src="<?php echo $_SESSION['root'] ?>plugins/myJs/login.js"></script>
 
 </body>

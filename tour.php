@@ -35,11 +35,16 @@ if (isset($_POST['submit'])) {
                 if (isset($_GET['tourId'])) {
                     $id = $_GET['tourId'];
                 } else {
-                    
+                    $user->redirect('404.php');
                 }
                 $tour = Tour::find($id);
+               
+                if($tour==false){
+                    $user->redirect('404.php');
+                }
                 $tour = new Tour($tour);
                 $url = "tour.php?tourId=" . $tour->id;
+                
                 $img = Image::getImage($tour->image);
                 ?>
                 <div class="row center">
@@ -71,8 +76,8 @@ if (isset($_POST['submit'])) {
                                 <?php echo $tour->info; ?>
                             </div>
                         </div>
-                        <div class="new-single-price">
-                            <table class="table table-bordered table-hover">
+                        <div class="new-single-price" >
+                            <table class="table table-bordered table-hover" style="text-align: center;">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -124,34 +129,5 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 new-recent slide-right ">
-                <h4 class="new-recent-title" style="margin-bottom: 1.5em;">
-                    <span>RECENT SEARCH</span>
-                </h4>
-                <div class=" new-right">
-                    <div id="block-views-recent-news-block" class="block block-views box_skin">
-                        <div class="content">
-                            <div class="view-recent-survey block clearfix center">
-                                <div class="view-header">
-                                    <h2>CatPulse</h2>
-                                    <div class="menu-tag">
-                                        <ul>
-                                            <li><a href="#" class="menu-tag-item">dsdsdsd</a></li>
-                                            <li><a href="#" class="menu-tag-item">dsdsdsd</a></li>
-                                            <li><a href="#" class="menu-tag-item">dsdsdsd</a></li>
-                                            <li><a href="#" class="menu-tag-item">dsdsdsd</a></li>
-                                            <li><a href="#" class="menu-tag-item">dsdsdsd</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include './inc/slide-right.php'; ?>         
 <?php include './inc/footer.php'; ?>

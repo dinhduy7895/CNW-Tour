@@ -98,10 +98,8 @@ $_SESSION['path'] = "http://localhost/CNW/Tour/";
                   </li>
                   <li class="<?php if ($title=='News') echo " active ";?> "><a href="<?php echo $_SESSION['path']; ?>news-page.php">News</a>
                   </li>
-                  <li class="<?php if ($title=='Search') echo " active ";?> "><a href="<?php echo $_SESSION['path']; ?>search.php">Search</a>
-                  </li>
-                  <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="<?php echo $_SESSION['path']; ?>contact.php">Contact</a>
-                  </li>
+                 
+                 
                   <?php if (!isset($_SESSION['user_session']) ) { ?>
                     <li class="<?php if ($title=='Login') echo " active ";?> "><a href="<?php echo $_SESSION['path']; ?>login_form.php">Login</a>
                     </li>

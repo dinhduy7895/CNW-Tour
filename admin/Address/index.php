@@ -39,19 +39,19 @@ require_once './_search.php';
                         </thead>
                         <tbody>
 
-                            <tr>
+                            <tr >
                                 <td> <input type='text' name='id'></td>
                                 <td> <input type='text' name='name'></td>
                                 <td><button type="submit" name="search"> Search</button></td>
                             </tr>
-                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <?php while ($row = $adrress_stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['name']; ?></td>
-                                    <td>
-                                        <a class="btn btn-default action" href="view.php?id=<?php echo $row['id']; ?>"> VIEW</a> 
-                                        <a class="btn btn-default action" href="update.php?id=<?php echo $row['id']; ?>"> UPDATE</a> 
-                                        <a data-toggle="modal" data-target="#myModal<?php echo $row['id']; ?>" class="btn btn-default">DELETE </a>
+                                    <td class="row">
+                                        <a class="btn btn-default action col-lg-4" href="view.php?id=<?php echo $row['id']; ?>"> VIEW</a> 
+                                        <a class="btn btn-default action col-lg-4" href="update.php?id=<?php echo $row['id']; ?>"> UPDATE</a> 
+                                        <a data-toggle="modal" data-target="#myModal<?php echo $row['id']; ?>" class="btn btn-default col-lg-4">DELETE </a>
                                         <div <?php echo "id='myModal".$row['id']."'";?> class="modal fade" role="dialog">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">

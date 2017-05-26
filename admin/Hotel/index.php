@@ -1,15 +1,14 @@
 <?php
-include '../connect/connect.php';
-include './_search.php';
-include '../layout/header.php';
-include '../layout/left.php';
-
+require_once '../layout/header.php';
+require_once '../layout/left.php';
+include('../connect/connect.php');
+require_once './_search.php';
 ?>
 <div class="content-wrapper">
     <section class="content">
         <div class="pull-left">
             <div class="title" >
-                <h1>TOUR MANAGER</h1>
+                <h1>TYPE MANAGER</h1>
             </div>
         </div>
         <?php
@@ -22,7 +21,7 @@ include '../layout/left.php';
             unset($_SESSION['mess']);
         } ?>
         <div class="create">
-            <a class="btn btn-success" href="create.php">Create User</a>
+            <a class="btn btn-success" href="create.php">Create Hotel</a>
         </div>
         <div class="box">
             <div class="box-header">
@@ -36,32 +35,28 @@ include '../layout/left.php';
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
-                                <th>Days</th>
-                                <th>Info</th>
+                                <th>Level</th>
                                 <th>Action</th>
                             </tr>
-
                         </thead>
                         <tbody>
 
                             <tr>
                                 <td> <input type='text' name='id'></td>
                                 <td> <input type='text' name='name'></td>
-                                <td> <input type='text' name='day'></td>
-                                <td> <input type='text' name='info'></td>
+                                <td> <input type='text' name='level'></td>
                                 <td><button type="submit" name="search"> Search</button></td>
                             </tr>
-                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <?php while ($row = $stmtHotel->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['dayTour']; ?></td>
-                                    <td><?php echo $row['info']; ?></td>
-                                    <td class="row">
-                                        <a class="btn btn-default action col-lg-4" href="view.php?id=<?php echo $row['id']; ?>"> VIEW</a> 
-                                        <a class="btn btn-default action col-lg-4" href="update.php?id=<?php echo $row['id']; ?>"> UPDATE</a> 
-                                        <a data-toggle="modal" data-target="#myModal<?php echo $row['id']; ?>" class="col-lg-4 btn btn-default">DELETE </a>
-                                        <div <?php echo "id='myModal".$row['id']."'";?> class="modal fade" role="dialog">
+                                    <td><?php echo $row['level']; ?></td>
+                                    <td>
+                                        <a class="btn btn-default action" href="view.php?id=<?php echo $row['id']; ?>"> VIEW</a> 
+                                        <a class="btn btn-default action" href="update.php?id=<?php echo $row['id']; ?>"> UPDATE</a> 
+                                        <a data-toggle="modal" data-target="#myModal<?php echo $row['id']; ?>" class="btn btn-default">DELETE </a>
+                                        <div id="<?php echo 'myModal'.$row['id'];?>" class="modal fade" role="dialog">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
@@ -88,5 +83,5 @@ include '../layout/left.php';
     </section>
 </div>
 <?php
-include '../layout/footer.php';
+require_once '../layout/footer.php';
 ?>

@@ -57,7 +57,6 @@ if (count($_POST) > 0) {
     }
     if ($check == 0) {
         if ($user->register($fname, $lname, $name, $email, $pass, $phone, $year)) {
-            $_SESSION['user_session'] = $name;
             header('Location: signupsuccess.php');
         } else {
             header('Location: index.php');

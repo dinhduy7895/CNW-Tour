@@ -70,6 +70,61 @@
             <li><a href="<?php echo $_SESSION['root'] ?>Address/create.php"><i class="fa fa-circle-o"></i> Create Address</a></li>
           </ul>
         </li>
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Type</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo $_SESSION['root'] ?>Type/index.php"><i class="fa fa-circle-o"></i> List Type</a></li>
+            <li><a href="<?php echo $_SESSION['root'] ?>Type/create.php"><i class="fa fa-circle-o"></i> Create Type</a></li>
+          </ul>
+        </li>
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Hotel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo $_SESSION['root'] ?>Hotel/index.php"><i class="fa fa-circle-o"></i> List Hotel</a></li>
+            <li><a href="<?php echo $_SESSION['root'] ?>Hotel/create.php"><i class="fa fa-circle-o"></i> Create Hotel</a></li>
+          </ul>
+        </li>
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Price</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo $_SESSION['root'] ?>Price/index.php"><i class="fa fa-circle-o"></i> List Price</a></li>
+            <li><a href="<?php echo $_SESSION['root'] ?>Price/create.php"><i class="fa fa-circle-o"></i> Create Price</a></li>
+          </ul>
+        </li>
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Customer</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo $_SESSION['root'] ?>Customer/index.php"><i class="fa fa-circle-o"></i> List Customer</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

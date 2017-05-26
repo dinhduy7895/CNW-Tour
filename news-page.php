@@ -16,12 +16,18 @@ include './utill/Image.php';
                 $check = 0;
                 if (isset($_GET['addressId'])) {
                     $list = Address::find($_GET['addressId']);
+                    if ($list == false) {
+                        $user->redirect('404.php');
+                    }
                     $check = 1;
                     $category = $list->name;
                     $list = new Address($list);
                     $tours = $list->getTour();
                 } else if (isset($_GET['typeId'])) {
                     $list = Type::find($_GET['typeId']);
+                    if ($list == false) {
+                        $user->redirect('404.php');
+                    }
                     $category = $list->name;
                     $list = new Type($list);
                     $tours = $list->getTour();
@@ -29,9 +35,12 @@ include './utill/Image.php';
                 } else if (isset($_GET['dayTour'])) {
                     $check = 1;
                     $tours = Tour::findByDay($_GET['dayTour']);
+                    if ($tours == false) {
+                        $user->redirect('404.php');
+                    }
                     $category = $_GET['dayTour'] . " days";
                 }
-                if (check == 0) {
+                if ($check == 0) {
                     include './_content.php';
                 } else {
                     ?>
@@ -83,87 +92,11 @@ include './utill/Image.php';
                                 </div>
                             </div>
                         <?php }
-                     ?>
-                </div>
-                <?php }?>
+                        ?>
+                    </div>
+                <?php } ?>
 
             </div>
-            <div class="col-lg-4 col-md-4 slide-right">
-                <h4 class="new-recent-title" style="margin-bottom: 1.5em;">
-                    <span>RECENT SEARCH</span>
-                </h4>
-                <div class="new-right">
-                    <div id="block-views-recent-news-block" class="block block-views box_skin">
-                        <div class="content">
-                            <div class="view-recent-survey block clearfix center">
-                                <div class="view-header">
-                                    <h2>Destination</h2>
-                                    <div class="menu-tag">
-                                        <ul>
-                                            <?php
-                                            $addressList = Address::findAll();
-                                            foreach ($addressList as $address) {
-                                                ?>
-                                                <li><a href="news-page.php?addressId=<?php echo $address->id; ?>" class="menu-tag-item"><?php echo $address->name; ?></a></li>
-                                            <?php } ?>
 
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" new-right">
-                    <div id="block-views-recent-news-block" class="block block-views box_skin">
-                        <div class="content">
-                            <div class="view-recent-survey block clearfix center">
-                                <div class="view-header">
-                                    <h2>Type</h2>
-                                    <div class="menu-tag">
-                                        <ul>
-                                            <?php
-                                            $typeList = Type::findAll();
-
-                                            foreach ($typeList as $type) {
-                                                ?>
-                                                <li><a href="news-page.php?typeId=<?php echo $type->id; ?>" class="menu-tag-item"><?php echo $type->name; ?></a></li>
-                                            <?php } ?>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" new-right">
-                    <div id="block-views-recent-news-block" class="block block-views box_skin">
-                        <div class="content">
-                            <div class="view-recent-survey block clearfix center">
-                                <div class="view-header">
-                                    <h2>DayTour</h2>
-                                    <div class="menu-tag">
-                                        <ul>
-                                            <?php
-                                            foreach ($tours as $tour) {
-                                                ?>
-                                                <li><a href="news-page.php?dayTour=<?php echo $tour->dayTour; ?>" class="menu-tag-item"><?php echo $tour->dayTour; ?> days</a></li>
-                                                <?php } ?>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<?php include 'inc/footer.php'; ?>
+            <?php include './inc/slide-right.php'; ?>         
+            <?php include 'inc/footer.php'; ?>

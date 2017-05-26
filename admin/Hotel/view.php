@@ -37,18 +37,11 @@ require_once '../layout/left.php';
                     <td>Name</td>
                     <td><?php echo $row['name']; ?></td>
                 </tr>
+                <?php include './viewHotelAddress.php'; ?>
                 <tr>
-                    <td>Days</td>
-                    <td><?php echo $row['dayTour']; ?></td>
+                    <td>Level</td>
+                    <td><?php echo $row['level']; ?></td>
                 </tr>
-                <tr>
-                    <td>Information</td>
-                    <td><?php echo $row['info']; ?></td>
-                </tr>
-
-                <?php include './viewTourAdress.php'; ?>
-                <?php include './viewTourType.php'; ?>
-
                 <tr>
                     <td>Created At</td>
                     <td><?php echo $row['created_at']; ?></td>
