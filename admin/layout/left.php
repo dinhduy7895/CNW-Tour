@@ -125,6 +125,18 @@
             <li><a href="<?php echo $_SESSION['root'] ?>Customer/index.php"><i class="fa fa-circle-o"></i> List Customer</a></li>
           </ul>
         </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Register Tour</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo $_SESSION['root'] ?>DangKy/index.php"><i class="fa fa-circle-o"></i> List Register Tour</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
